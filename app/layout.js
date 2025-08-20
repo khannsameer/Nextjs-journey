@@ -1,7 +1,10 @@
 export default function RootLayout({ children }) {
   return (
     <html>
-      <body>{children}</body>
+      <body>
+        <h1>Home layout</h1>
+        {children}
+      </body>
     </html>
   );
 }
