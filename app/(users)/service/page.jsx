@@ -1,4 +1,5 @@
 import Image from "next/image";
+import planet from "@/public/planet.jpg";
 
 const Services = () => {
   return (
@@ -20,6 +21,7 @@ const Services = () => {
                   height={500}
                   alt="Planet Image"
                   className="w-full h-full rounded-full"
+                  priority={false}
                 />
               </div>
               <h3 className="text-lg font-semibold text-center text-gray-800">
@@ -34,19 +36,21 @@ const Services = () => {
             </div>
 
             {/* Team Member 2 */}
-            <div className="bg-white rounded-lg shadow-md p-6 hover:shadow-lg hover:translate-y-2 transition-all duration-300">
-              <div className="w-24 h-24 bg-blue-200 rounded-full mx-auto mb-4 flex items-center justify-center">
-                <span className="text-2xl font-bold text-blue-600">B</span>
+            <div className="bg-white rounded-lg shadow-md p-4 hover:shadow-lg hover:translate-y-2 transition-all duration-300">
+              <div className="w-full h-full bg-blue-200 relative rounded-full mx-auto mb-4 flex items-center justify-center">
+                <Image
+                  src={planet}
+                  // width={500}
+                  // height={500}
+                  alt="Food Image"
+                  fill={true} // if we use fill prop must have to use relative, fixed, or absolute in parent element
+                  quality={100}
+                  priority={false}
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                  placeholder="blur" // it we want to show the image blue then have to import the image
+                  blurDataURL=""
+                />
               </div>
-              <h3 className="text-lg font-semibold text-center text-gray-800">
-                Ben
-              </h3>
-              <p className="text-sm text-gray-600 text-center mt-2">
-                Backend Developer
-              </p>
-              <p className="text-xs text-gray-500 text-center mt-1">
-                NodeJs & MongoDB
-              </p>
             </div>
 
             {/* Team Member 3 */}
