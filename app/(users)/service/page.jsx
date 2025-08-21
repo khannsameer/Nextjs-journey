@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 const Services = () => {
   return (
     <>
@@ -12,7 +14,13 @@ const Services = () => {
             {/* Team Member 1 */}
             <div className="bg-white rounded-lg shadow-md p-6 hover:shadow-lg hover:translate-y-2 transition-all duration-300">
               <div className="w-24 h-24 bg-blue-200 rounded-full mx-auto mb-4 flex items-center justify-center">
-                <span className="text-2xl font-bold text-purple-600">S</span>
+                <Image
+                  src="/planet.jpg"
+                  width={500}
+                  height={500}
+                  alt="Planet Image"
+                  className="w-full h-full rounded-full"
+                />
               </div>
               <h3 className="text-lg font-semibold text-center text-gray-800">
                 Alice
@@ -28,7 +36,7 @@ const Services = () => {
             {/* Team Member 2 */}
             <div className="bg-white rounded-lg shadow-md p-6 hover:shadow-lg hover:translate-y-2 transition-all duration-300">
               <div className="w-24 h-24 bg-blue-200 rounded-full mx-auto mb-4 flex items-center justify-center">
-                <span className="text-2xl font-bold text-blue-600">S</span>
+                <span className="text-2xl font-bold text-blue-600">B</span>
               </div>
               <h3 className="text-lg font-semibold text-center text-gray-800">
                 Ben
@@ -44,7 +52,7 @@ const Services = () => {
             {/* Team Member 3 */}
             <div className="bg-white rounded-lg shadow-md p-6 hover:shadow-lg hover:translate-y-2 transition-all duration-300">
               <div className="w-24 h-24 bg-cyan-200 rounded-full mx-auto mb-4 flex items-center justify-center">
-                <span className="text-2xl font-bold text-cyan-600">S</span>
+                <span className="text-2xl font-bold text-cyan-600">C</span>
               </div>
               <h3 className="text-lg font-semibold text-center text-gray-800">
                 Charlse
@@ -56,7 +64,7 @@ const Services = () => {
             {/* Team Member 4 */}
             <div className="bg-white rounded-lg shadow-md p-6 hover:shadow-lg hover:translate-y-2 transition-all duration-300">
               <div className="w-24 h-24 bg-lime-200 rounded-full mx-auto mb-4 flex items-center justify-center">
-                <span className="text-2xl font-bold text-lime-600">S</span>
+                <span className="text-2xl font-bold text-lime-600">D</span>
               </div>
               <h3 className="text-lg font-semibold text-center text-gray-800">
                 Den
@@ -72,7 +80,7 @@ const Services = () => {
             {/* Team Member 5 */}
             <div className="bg-white rounded-lg shadow-md p-6 hover:shadow-lg hover:translate-y-2 transition-all duration-300">
               <div className="w-24 h-24 bg-emerald-200 rounded-full mx-auto mb-4 flex items-center justify-center">
-                <span className="text-2xl font-bold text-emerald-600">S</span>
+                <span className="text-2xl font-bold text-emerald-600">E</span>
               </div>
               <h3 className="text-lg font-semibold text-center text-gray-800">
                 Ellie
@@ -84,7 +92,7 @@ const Services = () => {
             {/* Team Member 6 */}
             <div className="bg-white rounded-lg shadow-md p-6 hover:shadow-lg hover:translate-y-2 transition-all duration-300">
               <div className="w-24 h-24 bg-green-200 rounded-full mx-auto mb-4 flex items-center justify-center">
-                <span className="text-2xl font-bold text-green-600">S</span>
+                <span className="text-2xl font-bold text-green-600">F</span>
               </div>
               <h3 className="text-lg font-semibold text-center text-gray-800">
                 Fiona
