@@ -1,7 +1,9 @@
+import "../globals.css";
+
 const Home = () => {
   return (
     <>
-      <h1>Hello Next.Js</h1>
+      <h1 className="font-vollkorn">Hello Next.Js</h1>
     </>
   );
 };

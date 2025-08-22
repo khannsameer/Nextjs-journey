@@ -10,6 +10,8 @@
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+  --font-vollkorn: var(--font-vollkorn);
+  --font-fugaz: var(--font-Fugaz-One);
 }
 
 @media (prefers-color-scheme: dark) {
