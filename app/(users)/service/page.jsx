@@ -1,6 +1,12 @@
 import Image from "next/image";
 import planet from "@/public/planet.jpg";
 
+export const metadata = {
+  title: "Service Page",
+  description: "This is a service page",
+  keywords: ["nextjs", "reactjs", "JavaScript"],
+};
+
 const Services = () => {
   return (
     <>
