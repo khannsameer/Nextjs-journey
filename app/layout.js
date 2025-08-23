@@ -11,14 +11,14 @@ export const metadata = {
   description:
     "Free tutorials on React.js, Next.js, and web development by Sameer.",
   keywords: ["React", "Next.js", "Web Development"],
-  icons: {
-    icon: "/img.jpg",
-  },
-  // metadataBase: new URL("https://thapatechical.com"),
+  // icons: {
+  //   icon: "/img.jpg",
+  // },
+  metadataBase: new URL("https://thapatechical.com"),
   openGraph: {
     title: "Techn",
     description: "Join the best web dev tutorials!",
-    // url: "https://yourdomain.com",
+    url: "https://yourdomain.com",
     siteName: "Sameer Techn",
     images: [
       {
