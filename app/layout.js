@@ -22,7 +22,7 @@ export const metadata = {
     siteName: "Sameer Techn",
     images: [
       {
-        url: "/planet.jpg",
+        url: "/og-image.png",
         width: 1200,
         height: 630,
         alt: "Tech",

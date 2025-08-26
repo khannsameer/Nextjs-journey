@@ -14,6 +14,12 @@ const Navbar = () => {
               <Link href="/about">About</Link>
             </li>
             <li>
+              <Link href="/clientcomponent">ClientComponent</Link>
+            </li>
+            <li>
+              <Link href="/servercomponent">ServerComponent</Link>
+            </li>
+            <li>
               <Link href="/contact">Contact</Link>
             </li>
             <li>
