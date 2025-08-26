@@ -13,6 +13,8 @@ const ClientComponent = () => {
       const data = await res.json();
       console.log(data);
       setPostData(data);
+
+      return data;
     };
     fetchData();
   }, []);
