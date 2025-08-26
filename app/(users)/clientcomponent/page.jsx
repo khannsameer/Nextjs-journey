@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import Counter from "./Counter";
 
 const URL = "https://jsonplaceholder.typicode.com/posts";
 
@@ -23,11 +24,12 @@ const ClientComponent = () => {
     <>
       <h1>Client Component</h1>
       <button
-        className="bg-amber-300 p-2 rounded-xl"
+        className="bg-amber-300 p-2 rounded-xl mr-2"
         onClick={() => alert("Hello")}
       >
         Click Me
       </button>
+      <Counter />
 
       <ul className="grid grid-cols-3 gap-5 mt-3">
         {postData.map((post) => (

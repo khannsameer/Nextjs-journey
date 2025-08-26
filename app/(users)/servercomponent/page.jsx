@@ -1,5 +1,5 @@
 const ServerComponent = async () => {
-  const URL = "https://jsonplaceholder.typicode.com/posts";
+  const URL = "https://jsonplaceholder.typicode.com/posts"; // in server component we cannot see the url but in the client component the url will expose
   const res = await fetch(URL);
   const data = await res.json();
   console.log(data);
