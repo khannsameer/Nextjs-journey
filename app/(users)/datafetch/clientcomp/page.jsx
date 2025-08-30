@@ -48,11 +48,12 @@ const DataFetchServer = () => {
     revealUserGender();
   }, []);
 
-  //   await new Promise((resolve) => {
-  //     setTimeout(() => {
-  //       resolve();
-  //     }, 500);
-  //   });
+  new Promise((resolve) => {
+    setTimeout(() => {
+      resolve();
+    }, 3000);
+  });
+
   if (!userInfo.gender) return null;
   const isMale = userInfo.gender === "male";
   const confidencePercentage = userInfo.probability * 100;
