@@ -2,15 +2,15 @@ import React from "react";
 import { db } from "@/config/db.jsx";
 
 const StaticPage = async () => {
-  const [student] = await db.execute("select * from students");
-  console.log(student);
+  const [doctors_db] = await db.execute("SELECT * FROM doctors");
+  console.log("Static Doctors");
 
   return (
     <>
-      <h1>Hi Static Page</h1>
+      <h1 className="m-5">Hi Static Page</h1>
       <ul>
-        {student.map((student) => {
-          return <li key={student.id}>{student.name}</li>;
+        {doctors_db.map((doctors) => {
+          return <li key={doctors.id}>{doctors.name}</li>;
         })}
       </ul>
     </>

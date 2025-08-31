@@ -6,33 +6,33 @@ import { cache } from "react";
 const DynamicPage = async () => {
   //   const [student] = await db.execute("select * from students");
   //   console.log("Dynamic Student");
-  const student = await getAllStudent();
+  const doctors = await getAllDoctors();
 
   return (
     <>
       <h1 className="mb-3">Hi Dynamic Page</h1>
-      <StudentList student={student} />
+      <DoctorsList doctors={doctors} />
     </>
   );
 };
 
 export default DynamicPage;
 
-const StudentList = async () => {
-  const student = await getAllStudent();
+const DoctorsList = async () => {
+  const doctors_db = await getAllDoctors();
   return (
     <>
       <ul>
-        {student.map((student) => {
-          return <li key={student.id}>{student.name}</li>;
+        {doctors_db.map((doctors) => {
+          return <li key={doctors.id}>{doctors.name}</li>;
         })}
       </ul>
     </>
   );
 };
 
-const getAllStudent = cache(async () => {
-  const [student] = await db.execute("select * from students");
-  console.log("Dynamic Student");
-  return student;
+const getAllDoctors = cache(async () => {
+  const [doctors_db] = await db.execute("SELECT * FROM doctors");
+  console.log("Dynamic Doctors");
+  return doctors_db;
 });
