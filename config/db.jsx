@@ -3,7 +3,7 @@ import mysql from "mysql2/promise";
 export const db = mysql.createPool({
   host: "localhost",
   user: "root",
-  password: "", // your password if have
+  password: "", // your db password if have
   database: "studentdb",
 });
 
