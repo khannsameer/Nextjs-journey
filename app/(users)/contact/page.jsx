@@ -1,12 +1,19 @@
-import contactAction from "./contact.action";
+"use client";
 
-export const metadata = {
-  title: "Contact Page",
-  description: "This is a contact page",
-  keywords: ["nextjs", "reactjs", "JavaScript"],
-};
+// import contactAction from "./contact.action";
 
-const Contact = async () => {
+// export const metadata = {                     //  can't use in client component
+//   title: "Contact Page",
+//   description: "This is a contact page",
+//   keywords: ["nextjs", "reactjs", "JavaScript"],
+// };
+
+const Contact = () => {
+  const contactAction = (formData) => {
+    const { fullName, email, message } = Object.fromEntries(formData.entries());
+    console.log(fullName, email, message);
+  };
+
   return (
     <>
       <div className="min-h-screen bg-[rgb(14,14,14)] text-white">
