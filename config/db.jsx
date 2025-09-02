@@ -4,7 +4,7 @@ export const db = mysql.createPool({
   host: "localhost",
   user: "root",
   password: "", // your db password if have
-  database: "contact_form",
+  database: "contact_form", //your database name
 });
 
 try {
