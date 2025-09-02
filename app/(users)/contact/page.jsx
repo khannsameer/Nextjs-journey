@@ -1,6 +1,7 @@
 "use client";
 
-// import contactAction from "./contact.action";
+import { useActionState } from "react";
+import contactAction from "./contact.action";
 
 // export const metadata = {                     //  can't use in client component
 //   title: "Contact Page",
@@ -9,10 +10,12 @@
 // };
 
 const Contact = () => {
-  const contactAction = (formData) => {
-    const { fullName, email, message } = Object.fromEntries(formData.entries());
-    console.log(fullName, email, message);
-  };
+  const [state, formAction, isPending] = useActionState(contactAction, null);
+
+  // const contactAction = (formData) => {
+  //   const { fullName, email, message } = Object.fromEntries(formData.entries());
+  //   console.log(fullName, email, message);
+  // };
 
   return (
     <>
@@ -23,7 +26,7 @@ const Contact = () => {
               Get In Touch
             </h1>
             <div className="bg-gray-900/50 backdrop-blur-sm rounded-lg p-8 border border-gray-800">
-              <form className="space-y-6" action={contactAction}>
+              <form className="space-y-6" action={formAction}>
                 {/* Full Name Field */}
                 <div>
                   <label
@@ -78,12 +81,28 @@ const Contact = () => {
                 {/* Submit Button */}
                 <button
                   type="submit"
+                  disabled={isPending}
                   className="w-full bg-pink-600 hover:bg-pink-700 disabled:bg-gray-600 disabled:cursor-not-allowed text-white font-medium py-3 px-6 rounded-lg transition-colors duration-200 flex items-center justify-center space-x-2"
                 >
-                  <span>Send Message</span>
+                  {isPending ? (
+                    <span>Loading...</span>
+                  ) : (
+                    <span>Send Message</span>
+                  )}
                 </button>
               </form>
             </div>
+            <section>
+              {state && (
+                <p
+                  className={`p-4 mt-5 text-center${
+                    state.success ? "bg-green-500" : "bg-red-600"
+                  }`}
+                >
+                  {state.message}
+                </p>
+              )}
+            </section>
           </div>
         </div>
       </div>
