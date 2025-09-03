@@ -18,16 +18,17 @@ import { redirect } from "next/navigation";
 
 //for client component
 
-const contactAction = (previousState, formData) => {
+const contactAction = (fullName, email, message) => {
   try {
-    const { fullName, email, message } = Object.fromEntries(formData.entries());
+    // const { fullName, email, message } = Object.fromEntries(formData.entries());
     //   console.log(fullName, email, message);
     db.execute(
       `insert into contact_form (full_name, email, message) values (?, ? , ?)`,
       [fullName, email, message]
     );
-    redirect("/");
-    // return { success: true, message: "Form Submitted Successfully" };
+
+    return { success: true, message: "Form Submitted Successfully" };
+    // redirect("/");
   } catch (error) {
     // console.log("server action", error);
     if (error.message === "NEXT_REDIRECT") throw error;

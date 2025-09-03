@@ -1,6 +1,6 @@
 "use client";
 
-import { useActionState } from "react";
+import { useActionState, useState, useTransition } from "react";
 import contactAction from "./contact.action";
 import { useFormStatus } from "react-dom";
 
@@ -11,12 +11,22 @@ import { useFormStatus } from "react-dom";
 // };
 
 const Contact = () => {
-  const [state, formAction, isPending] = useActionState(contactAction, null);
+  const [isPending, startTransition] = useTransition();
+  const [contactFormResponse, setContactFormResponse] = useState(null);
+  // const [state, formAction, isPending] = useActionState(contactAction, null);
 
   // const contactAction = (formData) => {
   //   const { fullName, email, message } = Object.fromEntries(formData.entries());
   //   console.log(fullName, email, message);
   // };
+
+  const handleContactSubmit = (formData) => {
+    const { fullName, email, message } = Object.fromEntries(formData);
+    startTransition(async () => {
+      const res = await contactAction(fullName, email, message);
+      setContactFormResponse(res);
+    });
+  };
 
   return (
     <>
@@ -27,7 +37,7 @@ const Contact = () => {
               Get In Touch
             </h1>
             <div className="bg-gray-900/50 backdrop-blur-sm rounded-lg p-8 border border-gray-800">
-              <form className="space-y-6" action={formAction}>
+              <form className="space-y-6" action={handleContactSubmit}>
                 {/* Full Name Field */}
                 <div>
                   <label
@@ -84,13 +94,13 @@ const Contact = () => {
               </form>
             </div>
             <section>
-              {state && (
+              {contactFormResponse && (
                 <p
                   className={`p-4 mt-5 text-center${
-                    state.success ? "bg-green-500" : "bg-red-600"
+                    contactFormResponse.success ? "bg-green-500" : "bg-red-600"
                   }`}
                 >
-                  {state.message}
+                  {contactFormResponse.message}
                 </p>
               )}
             </section>
