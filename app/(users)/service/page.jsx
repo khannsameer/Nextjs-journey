@@ -1,11 +1,14 @@
+"use client";
+
 import Image from "next/image";
 import planet from "@/public/planet.jpg";
+import { easeIn, easeInOut, motion } from "motion/react";
 
-export const metadata = {
-  title: "Service Page",
-  description: "This is a service page",
-  keywords: ["nextjs", "reactjs", "JavaScript"],
-};
+// export const metadata = {
+//   title: "Service Page",
+//   description: "This is a service page",
+//   keywords: ["nextjs", "reactjs", "JavaScript"],
+// };
 
 const Services = () => {
   return (
@@ -19,8 +22,19 @@ const Services = () => {
 
           <div className="grid grid-cols-3 gap-8">
             {/* Team Member 1 */}
-            <div className="bg-white rounded-lg shadow-md p-6 hover:shadow-lg hover:translate-y-2 transition-all duration-300">
-              <div className="w-24 h-24 bg-blue-200 rounded-full mx-auto mb-4 flex items-center justify-center">
+            <motion.div
+              initial={{ opacity: 0, y: 40 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.3, ease: easeIn }}
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.7 }}
+              className="bg-white rounded-lg shadow-md p-6 hover:shadow-lg "
+            >
+              <motion.div
+                whileHover={{ rotate: 360 }}
+                transition={{ duration: 1, ease: easeInOut }}
+                className="w-24 h-24 bg-blue-200 rounded-full mx-auto mb-4 flex items-center justify-center"
+              >
                 <Image
                   src="/planet.jpg"
                   width={500}
@@ -29,17 +43,32 @@ const Services = () => {
                   className="w-full h-full rounded-full"
                   priority={false}
                 />
-              </div>
-              <h3 className="text-lg font-semibold text-center text-gray-800">
+              </motion.div>
+              <motion.h3
+                initial={{ opacity: 0, y: 40 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ ease: easeIn, delay: 0.4 }}
+                className="text-lg font-semibold text-center text-gray-800"
+              >
                 Alice
-              </h3>
-              <p className="text-sm text-gray-600 text-center mt-2">
+              </motion.h3>
+              <motion.p
+                initial={{ opacity: 0, y: 40 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ ease: easeIn, delay: 1 }}
+                className="text-sm text-gray-600 text-center mt-2"
+              >
                 Frontend Developer
-              </p>
-              <p className="text-xs text-gray-500 text-center mt-1">
+              </motion.p>
+              <motion.p
+                initial={{ opacity: 0, y: 40 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ ease: easeIn, delay: 1.5 }}
+                className="text-xs text-gray-500 text-center mt-1"
+              >
                 JavaScript & React
-              </p>
-            </div>
+              </motion.p>
+            </motion.div>
 
             {/* Team Member 2 */}
             <div className="bg-white rounded-lg shadow-md p-4 hover:shadow-lg hover:translate-y-2 transition-all duration-300">
