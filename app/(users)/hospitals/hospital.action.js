@@ -1,7 +1,7 @@
 "use server";
 
 import { db } from "@/config/db";
-// import { revalidatePath } from "next/cache";
+import { revalidatePath } from "next/cache";
 
 const createHospitalAction = async (data) => {
   try {
@@ -14,7 +14,7 @@ const createHospitalAction = async (data) => {
       [name, city, state, department, established_year]
     );
 
-    // revalidatePath("/hospitals");
+    revalidatePath("/hospitals");
     return { success: true, message: "Hospital Data Submitted Successfully" };
   } catch (error) {
     if (error.message === "NEXT_REDIRECT") throw error;
