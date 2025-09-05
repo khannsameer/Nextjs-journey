@@ -152,7 +152,7 @@ const Services = () => {
               ref={cardRef}
               onMouseEnter={handleMouseEnter}
               onMouseLeave={handleMouseLeave}
-              className="bg-white rounded-lg shadow-md p-6 hover:shadow-lg "
+              className="bg-white rounded-lg shadow-md p-6 hover:shadow-lg"
             >
               <div className="w-24 h-24 bg-cyan-200 rounded-full mx-auto mb-4 flex items-center justify-center">
                 <span className="text-2xl font-bold text-cyan-600">C</span>
